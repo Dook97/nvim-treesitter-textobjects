@@ -237,13 +237,7 @@ end
 ---@param inner Range4
 ---@return boolean
 local function contains(outer, inner)
-  local start_row_o, start_col_o, end_row_o, end_col_o = unpack(outer) ---@type integer, integer, integer, integer
-  local start_row_i, start_col_i, end_row_i, end_col_i = unpack(inner) ---@type integer, integer, integer, integer
-
-  return start_row_o <= start_row_i
-    and start_col_o <= start_col_i
-    and end_row_o >= end_row_i
-    and end_col_o >= end_col_i
+  return ts._range.contains(outer, inner)
 end
 
 ---@param range Range6
